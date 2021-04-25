@@ -186,96 +186,156 @@ labels_level_c = level_C_labels['subtask_c'].values.tolist() # Subtask C Labels
 
 print("SVM model experiment begins on Level A classification ...")
 
-
 ## Split into Train and Test vectors using the vectors of level A and Labels of level A with a training size of 0.75.
 train_vectors_level_A, test_vectors_level_A, train_labels_level_A, test_labels_level_A = train_test_split(vectors_level_a[:], labels_level_a[:], train_size=0.70)
 
-# Extracting names of labels and storing them in a variable
+## Extracting names of labels and storing them in a variable
 classNames = np.unique(test_labels_level_A)
+
 print("Training begins on Level A classification...")
 warnings.filterwarnings(action='ignore')
+
+## creating an object of SVC
 classifiersvc = SVC()
-print(classifiersvc.get_params().keys())
+
+## creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
 param_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]
+
+## creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
 classifierGrid = GridSearchCV(classifiersvc, param_grid, refit = True, verbose=2)
+
+## Model fit
 classifierGrid.fit(train_vectors_level_A, train_labels_level_A)
+
+## choosing the best estimator with the help of GridSearchCV
 classifierGrid = classifierGrid.best_estimator_
 print("Training complete....")
 
 
 print("calculating accuracy....")
+## Training accuracy has been calculated
 accuracy = accuracy_score(train_labels_level_A, classifierGrid.predict(train_vectors_level_A))
 print("Training Accuracy:", accuracy)
+
+## Predictions are obtained on the test data set
 test_predictions = classifierGrid.predict(test_vectors_level_A)
+
+## Testing accuracy has been calculated
 accuracy = accuracy_score(test_labels_level_A, test_predictions)
 print("Test Accuracy:", accuracy)
+
+
 print("Confusion Matrix:")
+## confusion matrix has been obtained for level A classification
 matrix_level_A = confusion_matrix(test_labels_level_A, test_predictions)
 print(matrix_level_A)
+## Obtaining classification report for the test data set
 print(classification_report(test_labels_level_A,test_predictions))
 
-plottedCM = plot_confusion_matrix(classifierGrid, test_vectors_level_A, test_labels_level_A,display_labels=classNames, cmap=plt.cm.Blues)
+## plotting confusion matrix for better visualization
+plottedCM_Level_A = plot_confusion_matrix(classifierGrid, test_vectors_level_A, test_labels_level_A,display_labels=classNames, cmap=plt.cm.Blues)
 plt.show()
 
 
 
 
-
+## Split into Train and Test vectors using the vectors of level A and Labels of level B with a training size of 0.75.
 train_vectors_level_B, test_vectors_level_B, train_labels_level_B, test_labels_level_B = train_test_split(vectors_level_b[:], labels_level_b[:], train_size=0.75)
 
+## Extracting names of labels and storing them in a variable
 classNames = np.unique(test_labels_level_B)
 print("Training begins on Level B classification...")
 warnings.filterwarnings(action='ignore')
+
+## creating an object of SVC
 classifiersvc = SVC()
-print(classifiersvc.get_params().keys())
+
+## creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
 param_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]
+
+## creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
 classifierGrid = GridSearchCV(classifiersvc, param_grid, refit = True, verbose=2)
+
+## Model fit
 classifierGrid.fit(train_vectors_level_B, train_labels_level_B)
+
+## choosing best estimator
 classifierGrid = classifierGrid.best_estimator_
 print("Training complete....")
 
 
 print("calculating accuracy....")
+## Training accuracy has been calculated
 accuracy = accuracy_score(train_labels_level_B, classifierGrid.predict(train_vectors_level_B))
 print("Training Accuracy:", accuracy)
+
+## predictions are obtained on the testing data set
 test_predictions = classifierGrid.predict(test_vectors_level_B)
+
+## Testing accuracy has been calculated
 accuracy = accuracy_score(test_labels_level_B, test_predictions)
 print("Test Accuracy:", accuracy)
+
 print("Confusion Matrix:")
+## confusion matrix has been obtained for level A classification
 matrix_level_B = confusion_matrix(test_labels_level_B, test_predictions)
 print(matrix_level_B)
+## Obtaining classification report for the test data set
 print(classification_report(test_labels_level_B,test_predictions))
 
-plottedCM = plot_confusion_matrix(classifierGrid, test_vectors_level_B, test_labels_level_B, display_labels=classNames, cmap=plt.cm.Blues)
+## plotting confusion matrix for better visualization
+plottedCM_Level_B = plot_confusion_matrix(classifierGrid, test_vectors_level_B, test_labels_level_B, display_labels=classNames, cmap=plt.cm.Blues)
 plt.show()
 
 
 
 
+
+## Split into Train and Test vectors using the vectors of level A and Labels of level B with a training size of 0.75.
 train_vectors_level_C, test_vectors_level_C, train_labels_level_C, test_labels_level_C = train_test_split(vectors_level_c[:], labels_level_c[:], train_size=0.75)
 
+## Extracting names of labels and storing them in a variable
 classNames = np.unique(test_labels_level_C)
 print("Training begins on Level C classification...")
 warnings.filterwarnings(action='ignore')
+
+## creating an object of SVC
 classifiersvc = SVC()
-print(classifiersvc.get_params().keys())
+
+## creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
 param_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]
+
+## creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
 classifierGrid = GridSearchCV(classifiersvc, param_grid, refit = True, verbose=2)
+
+## Model fit
 classifierGrid.fit(train_vectors_level_C, train_labels_level_C)
+
+## Choosing beat estimator
 classifierGrid = classifierGrid.best_estimator_
 print("Training complete....")
 
 
 print("calculating accuracy....")
+## Training accuracy has been calculated
 accuracy = accuracy_score(train_labels_level_C, classifierGrid.predict(train_vectors_level_C))
 print("Training Accuracy:", accuracy)
+
+## predictions are obtained on the testing data set
 test_predictions = classifierGrid.predict(test_vectors_level_C)
+
+## Testing accuracy has been calculated
 accuracy = accuracy_score(test_labels_level_C, test_predictions)
 print("Test Accuracy:", accuracy)
+
+
 print("Confusion Matrix:")
+## confusion matrix has been obtained for level A classification
 matrix_level_C = confusion_matrix(test_labels_level_C, test_predictions)
 print(matrix_level_C)
+## Obtaining classification report for the test data set
 print(classification_report(test_labels_level_C,test_predictions))
 
+## plotting confusion matrix for better visualization
 plottedCM = plot_confusion_matrix(classifierGrid, test_vectors_level_C, test_labels_level_C, display_labels=classNames, cmap=plt.cm.Blues)
 plt.show()
