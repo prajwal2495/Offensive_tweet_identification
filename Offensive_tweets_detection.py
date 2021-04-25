@@ -144,7 +144,7 @@ print("SVM model experiment begins on Level A classification ...")
 
 train_vectors_level_A, test_vectors_level_A, train_labels_level_A, test_labels_level_A = train_test_split(vectors_level_a[:], labels_level_a[:], train_size=0.70)
 
-classNames = np.unique(test_labels)
+classNames = np.unique(test_labels_level_A)
 print("Training begins on Level A classification...")
 warnings.filterwarnings(action='ignore')
 classifiersvc = SVC()
