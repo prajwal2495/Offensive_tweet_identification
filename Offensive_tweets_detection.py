@@ -66,7 +66,12 @@ def remove_webTags_UserNames_Noise(tweet):
     
     return re.sub(r'[^a-zA-Z]', ' ', tweet)
 
+
 def stop_words_removal(tokens):
+	'''
+	Removes stop words from the tweets. 
+	@param tokens 
+	'''
     cleaned_tokens = []
     stop = set(stopwords.words('english'))
     for token in tokens:
@@ -77,6 +82,11 @@ def stop_words_removal(tokens):
     return cleaned_tokens
 
 def tokenize(tweet):
+	'''
+	Tokenises a tweet into words.
+	@param tweet String containing the tweet to be tokenised.
+	@return word separated from the tweet.
+	'''
     lower_cased_tweet = tweet.lower()
     return word_tokenize(lower_cased_tweet)
 
