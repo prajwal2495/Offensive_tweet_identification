@@ -15,38 +15,12 @@ training_data_set = pd.read_csv("/Users/prajwalkrishn/Desktop/My_Computer/projec
 print("Done reading....")
 
 
-
-
-
-training_data_set.head(5)
-
-
-
-
-
 tweets = training_data_set[["tweet"]]
 level_A_labels = training_data_set[["subtask_a"]]
 level_B_labels = training_data_set.query("subtask_a == 'Offensive'")[["subtask_b"]]
 level_C_labels = training_data_set.query("subtask_b == 'TIN'")[["subtask_c"]]
 
 All_Cleaned_tweets = copy.deepcopy(tweets)
-
-
-
-
-##Data Cleaning and Pre-Processing
-
-# tweets.head(5)
-
-# level_A_labels.head(5)
-
-# level_B_labels.head(5)
-
-# level_C_labels.head(5)
-
-# All_Cleaned_tweets.head(5)
-
-
 
 import re
 import nltk
@@ -115,11 +89,6 @@ tqdm.pandas(desc="Lemmatize...")
 All_Cleaned_tweets['tokens'] = All_Cleaned_tweets['tokens'].progress_apply(lemmatization)
 
 text_vector = All_Cleaned_tweets['tokens'].tolist()
-
-
-
-# All_Cleaned_tweets.head(5)
-
 
 
 from sklearn.feature_extraction.text import TfidfVectorizer
