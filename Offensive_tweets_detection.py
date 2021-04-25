@@ -102,6 +102,8 @@ def tokenize(tweet):
 	@param tweet String containing the tweet to be tokenised.
 	@return word separated from the tweet.
 	'''
+	
+	## Stores the tweets converted into lowercase to get them into a uniform way.
 	lower_cased_tweet = tweet.lower()
 	return word_tokenize(lower_cased_tweet)
 
@@ -113,6 +115,8 @@ def stemming(tokens):
 	'''
 	cleaned_tokens = []
 	for token in tokens:
+		
+		## Stores the stemmed words for the current token.
 		token = lancaster.stem(token)
 		if len(token) > 1:
 			cleaned_tokens.append(token)
@@ -126,6 +130,8 @@ def lemmatization(tokens):
 	'''
 	cleaned_tokens = []
 	for token in tokens:
+	
+		## Stores the lemmatized words for the current token.
 		token = wordNet.lemmatize(token)
 		if len(token) > 1:
 			cleaned_tokens.append(token)
@@ -160,6 +166,8 @@ def tfid(text_vector):
 	@param text_vector tweets to be converted into tf-idf feature form.
 	@return vectors returns the tweets converted into tf-idf features.
 	'''
+	
+	## Creates and stores an instance of the TfidfVectorizer class. This will be used further to extract our data as tf-idf features.
 	vectorizer = TfidfVectorizer()
 	untokenized_data =[' '.join(tweet) for tweet in tqdm(text_vector, "Vectorizing...")]
 	vectorizer = vectorizer.fit(untokenized_data)
@@ -177,6 +185,8 @@ def get_vectors(vectors, labels, keyword):
 	if len(vectors) != len(labels):
 		print("Unmatching sizes!")
 		return
+	
+	## Stores a new list to append the zipped vectors and labels into.
 	result = list()
 	for vector, label in zip(vectors, labels):
 		if label == keyword:
@@ -216,19 +226,19 @@ classNames = np.unique(test_labels_level_A)
 print("Training begins on Level A classification...")
 warnings.filterwarnings(action='ignore')
 
-## creating an object of SVC
+## Creating an object of SVC
 classifiersvc = SVC()
 
-## creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
+## Creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
 param_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]
 
-## creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
+## Creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
 classifierGrid = GridSearchCV(classifiersvc, param_grid, refit = True, verbose=2)
 
-## Model fit
+# Model fit
 classifierGrid.fit(train_vectors_level_A, train_labels_level_A)
 
-## choosing the best estimator with the help of GridSearchCV
+# choosing the best estimator with the help of GridSearchCV
 classifierGrid = classifierGrid.best_estimator_
 print("Training complete....")
 
@@ -268,19 +278,19 @@ classNames = np.unique(test_labels_level_B)
 print("Training begins on Level B classification...")
 warnings.filterwarnings(action='ignore')
 
-## creating an object of SVC
+## Creating an object of SVC
 classifiersvc = SVC()
 
-## creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
+## Creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
 param_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]
 
-## creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
+## Creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
 classifierGrid = GridSearchCV(classifiersvc, param_grid, refit = True, verbose=2)
 
-## Model fit
+# Model fit
 classifierGrid.fit(train_vectors_level_B, train_labels_level_B)
 
-## choosing best estimator
+# choosing best estimator
 classifierGrid = classifierGrid.best_estimator_
 print("Training complete....")
 
@@ -304,7 +314,7 @@ print(matrix_level_B)
 ## Obtaining classification report for the test data set
 print(classification_report(test_labels_level_B,test_predictions))
 
-## plotting confusion matrix for better visualization
+## Plotting confusion matrix for better visualization
 plottedCM_Level_B = plot_confusion_matrix(classifierGrid, test_vectors_level_B, test_labels_level_B, display_labels=classNames, cmap=plt.cm.Blues)
 plt.show()
 
@@ -320,19 +330,19 @@ classNames = np.unique(test_labels_level_C)
 print("Training begins on Level C classification...")
 warnings.filterwarnings(action='ignore')
 
-## creating an object of SVC
+## Creating an object of SVC
 classifiersvc = SVC()
 
-## creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
+## Creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV
 param_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]
 
-## creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
+## Creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters
 classifierGrid = GridSearchCV(classifiersvc, param_grid, refit = True, verbose=2)
 
-## Model fit
+# Model fit
 classifierGrid.fit(train_vectors_level_C, train_labels_level_C)
 
-## Choosing beat estimator
+# Choosing best estimator
 classifierGrid = classifierGrid.best_estimator_
 print("Training complete....")
 
