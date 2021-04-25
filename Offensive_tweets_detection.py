@@ -39,9 +39,9 @@ pp = pprint.PrettyPrinter(indent=5)
 
 
 print("reading data set....")
-
+#/Users/prajwalkrishn/Desktop/My_Computer/project - Dsci 601/Offensive_Tweet_Detection
 ## Stores the training data set read from the CSV file.
-training_data_set = pd.read_csv("/Users/prajwalkrishn/Desktop/My_Computer/project - Dsci 601/Offensive_Tweet_Detection/Dataset/MOLID.csv")
+training_data_set = pd.read_csv("./Dataset/MOLID.csv")
 print("Done reading....")
 
 
