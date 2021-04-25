@@ -152,13 +152,13 @@ Variables</h2></td></tr>
 <tr class="memitem:a9155bd707caf3568010b98fa1344848f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a9155bd707caf3568010b98fa1344848f">action</a></td></tr>
 <tr class="separator:a9155bd707caf3568010b98fa1344848f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ce737faa77018efcce4db0327d07dc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a9ce737faa77018efcce4db0327d07dc8">classifiersvc</a> = SVC()</td></tr>
-<tr class="memdesc:a9ce737faa77018efcce4db0327d07dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">creating an object of SVC  <a href="namespace_offensive__tweets__detection.html#a9ce737faa77018efcce4db0327d07dc8">More...</a><br /></td></tr>
+<tr class="memdesc:a9ce737faa77018efcce4db0327d07dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating an object of SVC.  <a href="namespace_offensive__tweets__detection.html#a9ce737faa77018efcce4db0327d07dc8">More...</a><br /></td></tr>
 <tr class="separator:a9ce737faa77018efcce4db0327d07dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bc8deb334f945a4c73646ddc7b5b4cf"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a5bc8deb334f945a4c73646ddc7b5b4cf">param_grid</a> = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]</td></tr>
-<tr class="memdesc:a5bc8deb334f945a4c73646ddc7b5b4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV  <a href="namespace_offensive__tweets__detection.html#a5bc8deb334f945a4c73646ddc7b5b4cf">More...</a><br /></td></tr>
+<tr class="memdesc:a5bc8deb334f945a4c73646ddc7b5b4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV.  <a href="namespace_offensive__tweets__detection.html#a5bc8deb334f945a4c73646ddc7b5b4cf">More...</a><br /></td></tr>
 <tr class="separator:a5bc8deb334f945a4c73646ddc7b5b4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82eb18f3935a95307d135ac1e0486993"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a> = GridSearchCV(<a class="el" href="namespace_offensive__tweets__detection.html#a9ce737faa77018efcce4db0327d07dc8">classifiersvc</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a5bc8deb334f945a4c73646ddc7b5b4cf">param_grid</a>, refit = True, verbose=2)</td></tr>
-<tr class="memdesc:a82eb18f3935a95307d135ac1e0486993"><td class="mdescLeft">&#160;</td><td class="mdescRight">creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters  <a href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">More...</a><br /></td></tr>
+<tr class="memdesc:a82eb18f3935a95307d135ac1e0486993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters.  <a href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">More...</a><br /></td></tr>
 <tr class="separator:a82eb18f3935a95307d135ac1e0486993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09f6658b7ece6804bfa479fcd5f00f91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a09f6658b7ece6804bfa479fcd5f00f91">accuracy</a> = accuracy_score(<a class="el" href="namespace_offensive__tweets__detection.html#a206bdb30ca926586dc02b99fc1f18a76">train_labels_level_A</a>, classifierGrid.predict(<a class="el" href="namespace_offensive__tweets__detection.html#a2a5f267e33a6bd3c9ea2ff06d9d3e63f">train_vectors_level_A</a>))</td></tr>
 <tr class="memdesc:a09f6658b7ece6804bfa479fcd5f00f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Training accuracy has been calculated.  <a href="namespace_offensive__tweets__detection.html#a09f6658b7ece6804bfa479fcd5f00f91">More...</a><br /></td></tr>
@@ -422,11 +422,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters </p>
-<p>Model fit.</p>
-<p>choosing the best estimator with the help of GridSearchCV</p>
-<p>choosing best estimator</p>
-<p>Choosing beat estimator </p>
+<p>Creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters. </p>
 
 </div>
 </div>
@@ -442,7 +438,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>creating an object of SVC </p>
+<p>Creating an object of SVC. </p>
 
 </div>
 </div>
@@ -635,7 +631,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV </p>
+<p>Creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV. </p>
 
 </div>
 </div>
@@ -686,7 +682,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Obtaining classification report for the test data set. </p>
-<p>plotting confusion matrix for better visualization </p>
+<p>Plotting confusion matrix for better visualization </p>
 
 </div>
 </div>
