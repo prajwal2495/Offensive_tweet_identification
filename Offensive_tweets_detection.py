@@ -186,8 +186,10 @@ labels_level_c = level_C_labels['subtask_c'].values.tolist() # Subtask C Labels
 
 print("SVM model experiment begins on Level A classification ...")
 
+# Split into Train and Test vectors using the vectors of level A and Labels of level A with a training size of 0.75.
 train_vectors_level_A, test_vectors_level_A, train_labels_level_A, test_labels_level_A = train_test_split(vectors_level_a[:], labels_level_a[:], train_size=0.70)
 
+# Extracting names of labels and storing them in a variable
 classNames = np.unique(test_labels_level_A)
 print("Training begins on Level A classification...")
 warnings.filterwarnings(action='ignore')
