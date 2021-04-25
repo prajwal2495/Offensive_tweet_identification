@@ -26,6 +26,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.linear_model import LogisticRegression
+from sklearn.feature_extraction.text import TfidfVectorizer
 import warnings
 
 >>>>>>> 904fea45df4805697c257a71d4bc4592d28e4468
@@ -55,7 +56,8 @@ wordNet = WordNetLemmatizer()
 
 
 def remove_webTags_UserNames_Noise(tweet):
-	''' Removes the username tags which start with the special character "@" on Twitter.
+	''' 
+	Removes the username tags which start with the special character "@" on Twitter.
 	# @param tweet String that contains the tweet.
 	# @return the tweet containing only alphabets, both lowercase and uppercase.
 	'''
@@ -91,6 +93,11 @@ def tokenize(tweet):
     return word_tokenize(lower_cased_tweet)
 
 def stemming(tokens):
+	'''
+	Stems a passed list of token to their base word. "Eatable", "Eaten" will become "Eat".
+	@param tokens a list of tokens that are to be stemmed.
+	@return cleaned_tokens returns a list of stemmed tokens.
+	'''
     cleaned_tokens = []
     for token in tokens:
         token = lancaster.stem(token)
@@ -99,6 +106,11 @@ def stemming(tokens):
     return cleaned_tokens
 
 def lemmatization(tokens):
+	'''
+	Converts a word to it's base word.
+	@param tokens a list of tokens that are to be stemmed.
+	@return cleaned_tokens returns a list of stemmed tokens.
+	'''
     cleaned_tokens = []
     for token in tokens:
         token = wordNet.lemmatize(token)
@@ -126,7 +138,7 @@ All_Cleaned_tweets['tokens'] = All_Cleaned_tweets['tokens'].progress_apply(lemma
 text_vector = All_Cleaned_tweets['tokens'].tolist()
 
 
-from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 def tfid(text_vector):
     vectorizer = TfidfVectorizer()
