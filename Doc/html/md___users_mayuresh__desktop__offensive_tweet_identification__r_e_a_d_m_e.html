@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Offensive Language Detection for Indo-Aryan Languages: README</title>
+<title>Offensive Language Detection for Indo-Aryan Languages: Offensive Language indentification in tweets</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,14 +62,48 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">README </div>  </div>
+<div class="title">Offensive Language indentification in tweets </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Offensive_Tweet_Detection</h1>
-<h5>Automated Machine learning model to detect a tweet is Offensive or not </h5>
-<p><br  />
- credits: <a href="https://github.com/ahmedhammad97/Offensive-Language-Detection/blob/master/Offensive_tweets.ipynb">https://github.com/ahmedhammad97/Offensive-Language-Detection/blob/master/Offensive_tweets.ipynb</a> </p>
-</div></div><!-- contents -->
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+An automated model trained to detect whether a tweet is offensive or not on multiple levels of classification.</h1>
+<p>Digital bullying is happening on a daily basis and all of us are facing in form or another on social media.</p>
+<p>Proposing a solution to tackle this problem by generating an automated tool that uses ML algorithmns and techniques to detect these offensive languages in our cases specifically in tweets and then decide whether the tweet was targeted, and if so, classifying the target into more labels</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Tools or Technoligies used</h1>
+<ul>
+<li>Scikit Learn</li>
+<li>NLTK</li>
+<li>TQDM</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Classifiers trained or experimented on</h2>
+<ul>
+<li>DecisionTree Algorithm</li>
+<li>SVC</li>
+<li>RandomForest</li>
+<li>KNN</li>
+<li>Multinomial Naive Bayes</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Results</h2>
+<p>SVC model has outperformed all the other models and the results are as follows for each level of classification. </p><pre class="fragment">Predicting whether the tweet is Offensive or not:
+    Training Accuracy : 0.98284
+    Test Accuracy : 0.856
+
+Predicting whether the tweet is Targeted or UnTargeted:
+    Training Accuracy : 0.66412
+    Test Accuracy : 0.69406
+
+Classifing the Targeted Insult tweet to Individual (IND), Group (GRP), Others (OTH):
+    Training Accuracy : 0.98636
+    Test Accuracy : 0.69387
+</pre><h2><a class="anchor" id="autotoc_md5"></a>
+Installation and Execution</h2>
+<p>Your python envirmonment should be installed with proper libraries such as Scikit_learn, NLTK, TQDM, MatPlotLib. You can pip or brew commands depending on the machine you are using to download these libaries </p><pre class="fragment">git clone https://github.com/prajwal2495/Offensive_tweet_identification.git
+cd Offensive_tweet_identification
+python Offensive_tweets_detection.py
+</pre> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

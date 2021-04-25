@@ -201,7 +201,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<pre class="fragment">    Returns a matrix for vectors. Zips vectors and labels IF and only if length of vector list is the same as length of the labels list. 
+    Else, the function gets terminated.
+    @param vectors These are the vectors for a given label.
+    @param labels These are the label values for the given label.
+    @param keyword which is the label to annotate for.</pre> 
 </div>
 </div>
 <a id="ae1157a165502d9763aefa4b36a6632dc"></a>
@@ -279,8 +283,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">    Removes stop words from the tweets. 
-    @param tokens </pre> 
+<pre class="fragment">Removes stop words from the tweets.
+@param tokens
+</pre> 
 </div>
 </div>
 <a id="a3374a868ae7b515cf3e9114b17ab048c"></a>
@@ -298,7 +303,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<pre class="fragment">    Converts the passed raw document to td-idf feature form.
+    Uses fit() and transform() on a TdidfVectorizer object.
+    @param text_vector tweets to be converted into tf-idf feature form.
+    @return vectors returns the tweets converted into tf-idf features.</pre> 
 </div>
 </div>
 <a id="a8c3e7ba3b8bef4a152090b548f8531bc"></a>
@@ -316,9 +324,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">    Tokenises a tweet into words.
-    @param tweet String containing the tweet to be tokenised.
-    @return word separated from the tweet.</pre> 
+<pre class="fragment">Tokenises a tweet into words.
+@param tweet String containing the tweet to be tokenised.
+@return word separated from the tweet.
+</pre> 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>

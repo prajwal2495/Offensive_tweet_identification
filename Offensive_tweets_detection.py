@@ -55,18 +55,11 @@ wordNet = WordNetLemmatizer()
 
 
 def remove_webTags_UserNames_Noise(tweet):
-<<<<<<< HEAD
 	''' 
 	Removes the username tags which start with the special character "@" on Twitter.
 	# @param tweet String that contains the tweet.
 	# @return the tweet containing only alphabets, both lowercase and uppercase.
 	'''
-=======
-    ''' Removes the username tags which start with the special character "@" on Twitter.
-    # @param tweet String that contains the tweet.
-    # @return the tweet containing only alphabets, both lowercase and uppercase.
-    '''
->>>>>>> 7b0b9e5a7af709f5a9d2be29b06578ccd00173d9
     things_to_be_removed_from_tweets = ['URL','@USER','\'ve','n\'t','\'s','\'m']
     
     for things in things_to_be_removed_from_tweets:
@@ -147,6 +140,12 @@ text_vector = All_Cleaned_tweets['tokens'].tolist()
 
 
 def tfid(text_vector):
+	'''
+	Converts the passed raw document to td-idf feature form.
+	Uses fit() and transform() on a TdidfVectorizer object.
+	@param text_vector tweets to be converted into tf-idf feature form.
+	@return vectors returns the tweets converted into tf-idf features.
+	'''
     vectorizer = TfidfVectorizer()
     untokenized_data =[' '.join(tweet) for tweet in tqdm(text_vector, "Vectorizing...")]
     vectorizer = vectorizer.fit(untokenized_data)
@@ -154,6 +153,13 @@ def tfid(text_vector):
     return vectors
   
 def get_vectors(vectors, labels, keyword):
+	'''
+	Returns a matrix for vectors. Zips vectors and labels IF and only if length of vector list is the same as length of the labels list. 
+	Else, the function gets terminated.
+	@param vectors These are the vectors for a given label.
+	@param labels These are the label values for the given label.
+	@param keyword which is the label to annotate for.
+	'''
     if len(vectors) != len(labels):
         print("Unmatching sizes!")
         return
