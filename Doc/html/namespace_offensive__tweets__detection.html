@@ -89,36 +89,51 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a2d2d4b5d6422fd9ac590f5dde4f04123"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a2d2d4b5d6422fd9ac590f5dde4f04123">pp</a> = pprint.PrettyPrinter(indent=5)</td></tr>
+<tr class="memdesc:a2d2d4b5d6422fd9ac590f5dde4f04123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a PrettyPrinter object.  <a href="namespace_offensive__tweets__detection.html#a2d2d4b5d6422fd9ac590f5dde4f04123">More...</a><br /></td></tr>
 <tr class="separator:a2d2d4b5d6422fd9ac590f5dde4f04123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a536f65fe3eb50909a7dbc3f275c2e34c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a536f65fe3eb50909a7dbc3f275c2e34c">training_data_set</a> = pd.read_csv(&quot;/Users/prajwalkrishn/Desktop/My_Computer/project - Dsci 601/Offensive_Tweet_Detection/Dataset/MOLID.csv&quot;)</td></tr>
+<tr class="memdesc:a536f65fe3eb50909a7dbc3f275c2e34c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the training data set read from the CSV file.  <a href="namespace_offensive__tweets__detection.html#a536f65fe3eb50909a7dbc3f275c2e34c">More...</a><br /></td></tr>
 <tr class="separator:a536f65fe3eb50909a7dbc3f275c2e34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9248ad693913086b9f370463f3b2c56c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a9248ad693913086b9f370463f3b2c56c">tweets</a> = <a class="el" href="namespace_offensive__tweets__detection.html#a536f65fe3eb50909a7dbc3f275c2e34c">training_data_set</a>[[&quot;tweet&quot;]]</td></tr>
+<tr class="memdesc:a9248ad693913086b9f370463f3b2c56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the tweets, which is the first column of the dataframe.  <a href="namespace_offensive__tweets__detection.html#a9248ad693913086b9f370463f3b2c56c">More...</a><br /></td></tr>
 <tr class="separator:a9248ad693913086b9f370463f3b2c56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeb53630369a42f91aac77c17769b16a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#afeb53630369a42f91aac77c17769b16a">level_A_labels</a> = <a class="el" href="namespace_offensive__tweets__detection.html#a536f65fe3eb50909a7dbc3f275c2e34c">training_data_set</a>[[&quot;subtask_a&quot;]]</td></tr>
+<tr class="memdesc:afeb53630369a42f91aac77c17769b16a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the Level A labels (Offensive/Not Offensive).  <a href="namespace_offensive__tweets__detection.html#afeb53630369a42f91aac77c17769b16a">More...</a><br /></td></tr>
 <tr class="separator:afeb53630369a42f91aac77c17769b16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcfdbb99a056edd66de927b0adb0393e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#afcfdbb99a056edd66de927b0adb0393e">level_B_labels</a> = training_data_set.query(&quot;subtask_a == 'Offensive'&quot;)[[&quot;subtask_b&quot;]]</td></tr>
+<tr class="memdesc:afcfdbb99a056edd66de927b0adb0393e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the Level B labels (Targeted/Untargeted).  <a href="namespace_offensive__tweets__detection.html#afcfdbb99a056edd66de927b0adb0393e">More...</a><br /></td></tr>
 <tr class="separator:afcfdbb99a056edd66de927b0adb0393e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ff945d21a72da39330a591310fec585"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a5ff945d21a72da39330a591310fec585">level_C_labels</a> = training_data_set.query(&quot;subtask_b == 'TIN'&quot;)[[&quot;subtask_c&quot;]]</td></tr>
+<tr class="memdesc:a5ff945d21a72da39330a591310fec585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the Level C labels (Ind/Grp/Oth)  <a href="namespace_offensive__tweets__detection.html#a5ff945d21a72da39330a591310fec585">More...</a><br /></td></tr>
 <tr class="separator:a5ff945d21a72da39330a591310fec585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35d66b9487855f9d028e77cba093c8eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a35d66b9487855f9d028e77cba093c8eb">All_Cleaned_tweets</a> = copy.deepcopy(<a class="el" href="namespace_offensive__tweets__detection.html#a9248ad693913086b9f370463f3b2c56c">tweets</a>)</td></tr>
+<tr class="memdesc:a35d66b9487855f9d028e77cba093c8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">All_cleaned_tweets contains the tweets from the dataset.  <a href="namespace_offensive__tweets__detection.html#a35d66b9487855f9d028e77cba093c8eb">More...</a><br /></td></tr>
 <tr class="separator:a35d66b9487855f9d028e77cba093c8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65a13ade17989bea183c9ef99517b2b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a65a13ade17989bea183c9ef99517b2b6">lancaster</a> = LancasterStemmer()</td></tr>
+<tr class="memdesc:a65a13ade17989bea183c9ef99517b2b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores an instance of LancasterStemmer class.  <a href="namespace_offensive__tweets__detection.html#a65a13ade17989bea183c9ef99517b2b6">More...</a><br /></td></tr>
 <tr class="separator:a65a13ade17989bea183c9ef99517b2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35bab0b9e109e52434f5889139024d5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a35bab0b9e109e52434f5889139024d5d">wordNet</a> = WordNetLemmatizer()</td></tr>
+<tr class="memdesc:a35bab0b9e109e52434f5889139024d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores an instance of WordNetLemmatizer class.  <a href="namespace_offensive__tweets__detection.html#a35bab0b9e109e52434f5889139024d5d">More...</a><br /></td></tr>
 <tr class="separator:a35bab0b9e109e52434f5889139024d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf38a1541501c33f2de8aab9d91e774"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#aadf38a1541501c33f2de8aab9d91e774">text_vector</a> = <a class="el" href="namespace_offensive__tweets__detection.html#a35d66b9487855f9d028e77cba093c8eb">All_Cleaned_tweets</a>['tokens'].tolist()</td></tr>
 <tr class="separator:aadf38a1541501c33f2de8aab9d91e774"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a627a4cb0e28c8ff78e5ee4ea95400cc5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a627a4cb0e28c8ff78e5ee4ea95400cc5">vectors_level_a</a> = <a class="el" href="namespace_offensive__tweets__detection.html#a3374a868ae7b515cf3e9114b17ab048c">tfid</a>(<a class="el" href="namespace_offensive__tweets__detection.html#aadf38a1541501c33f2de8aab9d91e774">text_vector</a>)</td></tr>
+<tr class="memdesc:a627a4cb0e28c8ff78e5ee4ea95400cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerical Vectors for level A.  <a href="namespace_offensive__tweets__detection.html#a627a4cb0e28c8ff78e5ee4ea95400cc5">More...</a><br /></td></tr>
 <tr class="separator:a627a4cb0e28c8ff78e5ee4ea95400cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a565a7156c72aa0b16e1e38511f8113"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a9a565a7156c72aa0b16e1e38511f8113">labels_level_a</a> = <a class="el" href="namespace_offensive__tweets__detection.html#afeb53630369a42f91aac77c17769b16a">level_A_labels</a>['subtask_a'].values.tolist()</td></tr>
+<tr class="memdesc:a9a565a7156c72aa0b16e1e38511f8113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtask A Labels.  <a href="namespace_offensive__tweets__detection.html#a9a565a7156c72aa0b16e1e38511f8113">More...</a><br /></td></tr>
 <tr class="separator:a9a565a7156c72aa0b16e1e38511f8113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0768569e776b6f904325381b2dcbc2dd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a0768569e776b6f904325381b2dcbc2dd">vectors_level_b</a> = <a class="el" href="namespace_offensive__tweets__detection.html#a6db9b2166541f3c25924222a9dfe5a28">get_vectors</a>(<a class="el" href="namespace_offensive__tweets__detection.html#a627a4cb0e28c8ff78e5ee4ea95400cc5">vectors_level_a</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a9a565a7156c72aa0b16e1e38511f8113">labels_level_a</a>, &quot;Offensive&quot;)</td></tr>
+<tr class="memdesc:a0768569e776b6f904325381b2dcbc2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerical Vectors B.  <a href="namespace_offensive__tweets__detection.html#a0768569e776b6f904325381b2dcbc2dd">More...</a><br /></td></tr>
 <tr class="separator:a0768569e776b6f904325381b2dcbc2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedf42360b2a2907e177e8b3c555e2517"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#aedf42360b2a2907e177e8b3c555e2517">labels_level_b</a> = <a class="el" href="namespace_offensive__tweets__detection.html#afcfdbb99a056edd66de927b0adb0393e">level_B_labels</a>['subtask_b'].values.tolist()</td></tr>
+<tr class="memdesc:aedf42360b2a2907e177e8b3c555e2517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtask B Labels.  <a href="namespace_offensive__tweets__detection.html#aedf42360b2a2907e177e8b3c555e2517">More...</a><br /></td></tr>
 <tr class="separator:aedf42360b2a2907e177e8b3c555e2517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab79b0f8ef3c6e5c2ad055f8a06baa3ca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#ab79b0f8ef3c6e5c2ad055f8a06baa3ca">vectors_level_c</a> = <a class="el" href="namespace_offensive__tweets__detection.html#a6db9b2166541f3c25924222a9dfe5a28">get_vectors</a>(<a class="el" href="namespace_offensive__tweets__detection.html#a0768569e776b6f904325381b2dcbc2dd">vectors_level_b</a>, <a class="el" href="namespace_offensive__tweets__detection.html#aedf42360b2a2907e177e8b3c555e2517">labels_level_b</a>, &quot;TIN&quot;)</td></tr>
+<tr class="memdesc:ab79b0f8ef3c6e5c2ad055f8a06baa3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerical Vectors C.  <a href="namespace_offensive__tweets__detection.html#ab79b0f8ef3c6e5c2ad055f8a06baa3ca">More...</a><br /></td></tr>
 <tr class="separator:ab79b0f8ef3c6e5c2ad055f8a06baa3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9360f72599fe8ae6e8f8bf27e56a641a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a9360f72599fe8ae6e8f8bf27e56a641a">labels_level_c</a> = <a class="el" href="namespace_offensive__tweets__detection.html#a5ff945d21a72da39330a591310fec585">level_C_labels</a>['subtask_c'].values.tolist()</td></tr>
+<tr class="memdesc:a9360f72599fe8ae6e8f8bf27e56a641a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtask C Labels.  <a href="namespace_offensive__tweets__detection.html#a9360f72599fe8ae6e8f8bf27e56a641a">More...</a><br /></td></tr>
 <tr class="separator:a9360f72599fe8ae6e8f8bf27e56a641a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a5f267e33a6bd3c9ea2ff06d9d3e63f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a2a5f267e33a6bd3c9ea2ff06d9d3e63f">train_vectors_level_A</a></td></tr>
 <tr class="memdesc:a2a5f267e33a6bd3c9ea2ff06d9d3e63f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split into Train and Test vectors using the vectors of level A and Labels of level A with a training size of 0.75.  <a href="namespace_offensive__tweets__detection.html#a2a5f267e33a6bd3c9ea2ff06d9d3e63f">More...</a><br /></td></tr>
@@ -132,24 +147,33 @@ Variables</h2></td></tr>
 <tr class="memitem:aba2d948d96e8c22359b874110a5602cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#aba2d948d96e8c22359b874110a5602cf">train_size</a></td></tr>
 <tr class="separator:aba2d948d96e8c22359b874110a5602cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7915762e6626a105dd77d5afba4377c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a> = np.unique(<a class="el" href="namespace_offensive__tweets__detection.html#a66a1b2046ca8fee36c26dddf9ef45fa8">test_labels_level_A</a>)</td></tr>
+<tr class="memdesc:a7915762e6626a105dd77d5afba4377c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracting names of labels and storing them in a variable.  <a href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">More...</a><br /></td></tr>
 <tr class="separator:a7915762e6626a105dd77d5afba4377c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9155bd707caf3568010b98fa1344848f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a9155bd707caf3568010b98fa1344848f">action</a></td></tr>
 <tr class="separator:a9155bd707caf3568010b98fa1344848f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ce737faa77018efcce4db0327d07dc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a9ce737faa77018efcce4db0327d07dc8">classifiersvc</a> = SVC()</td></tr>
+<tr class="memdesc:a9ce737faa77018efcce4db0327d07dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">creating an object of SVC  <a href="namespace_offensive__tweets__detection.html#a9ce737faa77018efcce4db0327d07dc8">More...</a><br /></td></tr>
 <tr class="separator:a9ce737faa77018efcce4db0327d07dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bc8deb334f945a4c73646ddc7b5b4cf"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a5bc8deb334f945a4c73646ddc7b5b4cf">param_grid</a> = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],'C': [1, 10, 100, 1000]}]</td></tr>
+<tr class="memdesc:a5bc8deb334f945a4c73646ddc7b5b4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV  <a href="namespace_offensive__tweets__detection.html#a5bc8deb334f945a4c73646ddc7b5b4cf">More...</a><br /></td></tr>
 <tr class="separator:a5bc8deb334f945a4c73646ddc7b5b4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82eb18f3935a95307d135ac1e0486993"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a> = GridSearchCV(<a class="el" href="namespace_offensive__tweets__detection.html#a9ce737faa77018efcce4db0327d07dc8">classifiersvc</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a5bc8deb334f945a4c73646ddc7b5b4cf">param_grid</a>, refit = True, verbose=2)</td></tr>
+<tr class="memdesc:a82eb18f3935a95307d135ac1e0486993"><td class="mdescLeft">&#160;</td><td class="mdescRight">creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters  <a href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">More...</a><br /></td></tr>
 <tr class="separator:a82eb18f3935a95307d135ac1e0486993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09f6658b7ece6804bfa479fcd5f00f91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a09f6658b7ece6804bfa479fcd5f00f91">accuracy</a> = accuracy_score(<a class="el" href="namespace_offensive__tweets__detection.html#a206bdb30ca926586dc02b99fc1f18a76">train_labels_level_A</a>, classifierGrid.predict(<a class="el" href="namespace_offensive__tweets__detection.html#a2a5f267e33a6bd3c9ea2ff06d9d3e63f">train_vectors_level_A</a>))</td></tr>
+<tr class="memdesc:a09f6658b7ece6804bfa479fcd5f00f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Training accuracy has been calculated.  <a href="namespace_offensive__tweets__detection.html#a09f6658b7ece6804bfa479fcd5f00f91">More...</a><br /></td></tr>
 <tr class="separator:a09f6658b7ece6804bfa479fcd5f00f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52a8cb49dbd093fdfee8f8e6bfab01f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a52a8cb49dbd093fdfee8f8e6bfab01f8">test_predictions</a> = classifierGrid.predict(<a class="el" href="namespace_offensive__tweets__detection.html#a3474972940d5fabffc94014788a9b292">test_vectors_level_A</a>)</td></tr>
+<tr class="memdesc:a52a8cb49dbd093fdfee8f8e6bfab01f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predictions are obtained on the test data set.  <a href="namespace_offensive__tweets__detection.html#a52a8cb49dbd093fdfee8f8e6bfab01f8">More...</a><br /></td></tr>
 <tr class="separator:a52a8cb49dbd093fdfee8f8e6bfab01f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e7590ea45d7416d58eb76dc401fcf8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a0e7590ea45d7416d58eb76dc401fcf8d">matrix_level_A</a> = confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a66a1b2046ca8fee36c26dddf9ef45fa8">test_labels_level_A</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a52a8cb49dbd093fdfee8f8e6bfab01f8">test_predictions</a>)</td></tr>
+<tr class="memdesc:a0e7590ea45d7416d58eb76dc401fcf8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">confusion matrix has been obtained for level A classification  <a href="namespace_offensive__tweets__detection.html#a0e7590ea45d7416d58eb76dc401fcf8d">More...</a><br /></td></tr>
 <tr class="separator:a0e7590ea45d7416d58eb76dc401fcf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2a67ffa3dfa4cde9c7c9c16acc6c4c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#ad2a67ffa3dfa4cde9c7c9c16acc6c4c9">plottedCM</a> = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a3474972940d5fabffc94014788a9b292">test_vectors_level_A</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a66a1b2046ca8fee36c26dddf9ef45fa8">test_labels_level_A</a>,display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td></tr>
-<tr class="separator:ad2a67ffa3dfa4cde9c7c9c16acc6c4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56389953d8dd7369ec15879a181fa170"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a56389953d8dd7369ec15879a181fa170">plottedCM_Level_A</a> = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a3474972940d5fabffc94014788a9b292">test_vectors_level_A</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a66a1b2046ca8fee36c26dddf9ef45fa8">test_labels_level_A</a>,display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td></tr>
+<tr class="memdesc:a56389953d8dd7369ec15879a181fa170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtaining classification report for the test data set.  <a href="namespace_offensive__tweets__detection.html#a56389953d8dd7369ec15879a181fa170">More...</a><br /></td></tr>
+<tr class="separator:a56389953d8dd7369ec15879a181fa170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adac94fc76ed9fe7b818634f8ba02ac1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#adac94fc76ed9fe7b818634f8ba02ac1b">train_vectors_level_B</a></td></tr>
+<tr class="memdesc:adac94fc76ed9fe7b818634f8ba02ac1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split into Train and Test vectors using the vectors of level A and Labels of level B with a training size of 0.75.  <a href="namespace_offensive__tweets__detection.html#adac94fc76ed9fe7b818634f8ba02ac1b">More...</a><br /></td></tr>
 <tr class="separator:adac94fc76ed9fe7b818634f8ba02ac1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a174f6880edd02a8ec98d12193772b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a7a174f6880edd02a8ec98d12193772b8">test_vectors_level_B</a></td></tr>
 <tr class="separator:a7a174f6880edd02a8ec98d12193772b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,8 +182,13 @@ Variables</h2></td></tr>
 <tr class="memitem:a338fa8d7ed5af5fdae392d5aad2b6379"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a338fa8d7ed5af5fdae392d5aad2b6379">test_labels_level_B</a></td></tr>
 <tr class="separator:a338fa8d7ed5af5fdae392d5aad2b6379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36cd2a5a730d67c74659e193fca7efba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#a36cd2a5a730d67c74659e193fca7efba">matrix_level_B</a> = confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a338fa8d7ed5af5fdae392d5aad2b6379">test_labels_level_B</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a52a8cb49dbd093fdfee8f8e6bfab01f8">test_predictions</a>)</td></tr>
+<tr class="memdesc:a36cd2a5a730d67c74659e193fca7efba"><td class="mdescLeft">&#160;</td><td class="mdescRight">confusion matrix has been obtained for level A classification  <a href="namespace_offensive__tweets__detection.html#a36cd2a5a730d67c74659e193fca7efba">More...</a><br /></td></tr>
 <tr class="separator:a36cd2a5a730d67c74659e193fca7efba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2a4dfdcb6d7a387a560efdea41ecd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#acc2a4dfdcb6d7a387a560efdea41ecd1">plottedCM_Level_B</a> = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a7a174f6880edd02a8ec98d12193772b8">test_vectors_level_B</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a338fa8d7ed5af5fdae392d5aad2b6379">test_labels_level_B</a>, display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td></tr>
+<tr class="memdesc:acc2a4dfdcb6d7a387a560efdea41ecd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtaining classification report for the test data set.  <a href="namespace_offensive__tweets__detection.html#acc2a4dfdcb6d7a387a560efdea41ecd1">More...</a><br /></td></tr>
+<tr class="separator:acc2a4dfdcb6d7a387a560efdea41ecd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4aa3338a85e13390b963ffc7eac9568"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#ab4aa3338a85e13390b963ffc7eac9568">train_vectors_level_C</a></td></tr>
+<tr class="memdesc:ab4aa3338a85e13390b963ffc7eac9568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split into Train and Test vectors using the vectors of level A and Labels of level B with a training size of 0.75.  <a href="namespace_offensive__tweets__detection.html#ab4aa3338a85e13390b963ffc7eac9568">More...</a><br /></td></tr>
 <tr class="separator:ab4aa3338a85e13390b963ffc7eac9568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea6af55f9f92c49acd2c2293196e0a40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#aea6af55f9f92c49acd2c2293196e0a40">test_vectors_level_C</a></td></tr>
 <tr class="separator:aea6af55f9f92c49acd2c2293196e0a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,7 +197,11 @@ Variables</h2></td></tr>
 <tr class="memitem:aa1a76ba9db3a4adecc93c200778724a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#aa1a76ba9db3a4adecc93c200778724a3">test_labels_level_C</a></td></tr>
 <tr class="separator:aa1a76ba9db3a4adecc93c200778724a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba09409e2af79dc6490ae74fc8ad47b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#aba09409e2af79dc6490ae74fc8ad47b3">matrix_level_C</a> = confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#aa1a76ba9db3a4adecc93c200778724a3">test_labels_level_C</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a52a8cb49dbd093fdfee8f8e6bfab01f8">test_predictions</a>)</td></tr>
+<tr class="memdesc:aba09409e2af79dc6490ae74fc8ad47b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">confusion matrix has been obtained for level A classification  <a href="namespace_offensive__tweets__detection.html#aba09409e2af79dc6490ae74fc8ad47b3">More...</a><br /></td></tr>
 <tr class="separator:aba09409e2af79dc6490ae74fc8ad47b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a67ffa3dfa4cde9c7c9c16acc6c4c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_offensive__tweets__detection.html#ad2a67ffa3dfa4cde9c7c9c16acc6c4c9">plottedCM</a> = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#aea6af55f9f92c49acd2c2293196e0a40">test_vectors_level_C</a>, <a class="el" href="namespace_offensive__tweets__detection.html#aa1a76ba9db3a4adecc93c200778724a3">test_labels_level_C</a>, display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td></tr>
+<tr class="memdesc:ad2a67ffa3dfa4cde9c7c9c16acc6c4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtaining classification report for the test data set.  <a href="namespace_offensive__tweets__detection.html#ad2a67ffa3dfa4cde9c7c9c16acc6c4c9">More...</a><br /></td></tr>
+<tr class="separator:ad2a67ffa3dfa4cde9c7c9c16acc6c4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6db9b2166541f3c25924222a9dfe5a28"></a>
@@ -342,6 +375,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Training accuracy has been calculated. </p>
+<p>Testing accuracy has been calculated. </p>
+
 </div>
 </div>
 <a id="a9155bd707caf3568010b98fa1344848f"></a>
@@ -370,6 +406,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>All_cleaned_tweets contains the tweets from the dataset. </p>
+
 </div>
 </div>
 <a id="a82eb18f3935a95307d135ac1e0486993"></a>
@@ -383,6 +421,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>creating an object for GridSearchCV with the object of SVC and parameter grid given as parameters </p>
+<p>Model fit.</p>
+<p>choosing the best estimator with the help of GridSearchCV</p>
+<p>choosing best estimator</p>
+<p>Choosing beat estimator </p>
 
 </div>
 </div>
@@ -398,6 +442,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>creating an object of SVC </p>
+
 </div>
 </div>
 <a id="a7915762e6626a105dd77d5afba4377c5"></a>
@@ -411,6 +457,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Extracting names of labels and storing them in a variable. </p>
 
 </div>
 </div>
@@ -426,6 +474,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Subtask A Labels. </p>
+
 </div>
 </div>
 <a id="aedf42360b2a2907e177e8b3c555e2517"></a>
@@ -439,6 +489,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Subtask B Labels. </p>
 
 </div>
 </div>
@@ -454,6 +506,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Subtask C Labels. </p>
+
 </div>
 </div>
 <a id="a65a13ade17989bea183c9ef99517b2b6"></a>
@@ -467,6 +521,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stores an instance of LancasterStemmer class. </p>
+<p>This will be used for stemming tokens. </p>
 
 </div>
 </div>
@@ -482,6 +539,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Stores the Level A labels (Offensive/Not Offensive). </p>
+
 </div>
 </div>
 <a id="afcfdbb99a056edd66de927b0adb0393e"></a>
@@ -495,6 +554,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stores the Level B labels (Targeted/Untargeted). </p>
 
 </div>
 </div>
@@ -510,6 +571,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Stores the Level C labels (Ind/Grp/Oth) </p>
+
 </div>
 </div>
 <a id="a0e7590ea45d7416d58eb76dc401fcf8d"></a>
@@ -523,6 +586,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>confusion matrix has been obtained for level A classification </p>
 
 </div>
 </div>
@@ -538,6 +603,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>confusion matrix has been obtained for level A classification </p>
+
 </div>
 </div>
 <a id="aba09409e2af79dc6490ae74fc8ad47b3"></a>
@@ -551,6 +618,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>confusion matrix has been obtained for level A classification </p>
 
 </div>
 </div>
@@ -566,6 +635,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>creating a parameter grid using the arguments SVC uses for hyper parameter tuning using GridSearchCV </p>
+
 </div>
 </div>
 <a id="ad2a67ffa3dfa4cde9c7c9c16acc6c4c9"></a>
@@ -575,10 +646,47 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Offensive_tweets_detection.plottedCM = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a3474972940d5fabffc94014788a9b292">test_vectors_level_A</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a66a1b2046ca8fee36c26dddf9ef45fa8">test_labels_level_A</a>,display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td>
+          <td class="memname">Offensive_tweets_detection.plottedCM = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#aea6af55f9f92c49acd2c2293196e0a40">test_vectors_level_C</a>, <a class="el" href="namespace_offensive__tweets__detection.html#aa1a76ba9db3a4adecc93c200778724a3">test_labels_level_C</a>, display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Obtaining classification report for the test data set. </p>
+<p>plotting confusion matrix for better visualization </p>
+
+</div>
+</div>
+<a id="a56389953d8dd7369ec15879a181fa170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56389953d8dd7369ec15879a181fa170">&#9670;&nbsp;</a></span>plottedCM_Level_A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Offensive_tweets_detection.plottedCM_Level_A = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a3474972940d5fabffc94014788a9b292">test_vectors_level_A</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a66a1b2046ca8fee36c26dddf9ef45fa8">test_labels_level_A</a>,display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtaining classification report for the test data set. </p>
+<p>plotting confusion matrix for better visualization </p>
+
+</div>
+</div>
+<a id="acc2a4dfdcb6d7a387a560efdea41ecd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc2a4dfdcb6d7a387a560efdea41ecd1">&#9670;&nbsp;</a></span>plottedCM_Level_B</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Offensive_tweets_detection.plottedCM_Level_B = plot_confusion_matrix(<a class="el" href="namespace_offensive__tweets__detection.html#a82eb18f3935a95307d135ac1e0486993">classifierGrid</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a7a174f6880edd02a8ec98d12193772b8">test_vectors_level_B</a>, <a class="el" href="namespace_offensive__tweets__detection.html#a338fa8d7ed5af5fdae392d5aad2b6379">test_labels_level_B</a>, display_labels=<a class="el" href="namespace_offensive__tweets__detection.html#a7915762e6626a105dd77d5afba4377c5">classNames</a>, cmap=plt.cm.Blues)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtaining classification report for the test data set. </p>
+<p>plotting confusion matrix for better visualization </p>
 
 </div>
 </div>
@@ -593,6 +701,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a PrettyPrinter object. </p>
+<p>This will be used further to print messages in a cleaner way. </p>
 
 </div>
 </div>
@@ -649,6 +760,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Predictions are obtained on the test data set. </p>
+<p>predictions are obtained on the testing data set </p>
 
 </div>
 </div>
@@ -792,6 +906,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Split into Train and Test vectors using the vectors of level A and Labels of level B with a training size of 0.75. </p>
+
 </div>
 </div>
 <a id="ab4aa3338a85e13390b963ffc7eac9568"></a>
@@ -805,6 +921,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Split into Train and Test vectors using the vectors of level A and Labels of level B with a training size of 0.75. </p>
 
 </div>
 </div>
@@ -820,6 +938,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Stores the training data set read from the CSV file. </p>
+
 </div>
 </div>
 <a id="a9248ad693913086b9f370463f3b2c56c"></a>
@@ -833,6 +953,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Store the tweets, which is the first column of the dataframe. </p>
+<p>These are strings. </p>
 
 </div>
 </div>
@@ -848,6 +971,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Numerical Vectors for level A. </p>
+
 </div>
 </div>
 <a id="a0768569e776b6f904325381b2dcbc2dd"></a>
@@ -861,6 +986,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Numerical Vectors B. </p>
 
 </div>
 </div>
@@ -876,6 +1003,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Numerical Vectors C. </p>
+
 </div>
 </div>
 <a id="a35bab0b9e109e52434f5889139024d5d"></a>
@@ -889,6 +1018,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stores an instance of WordNetLemmatizer class. </p>
+<p>This will be used for lemmatization of tokens. </p>
 
 </div>
 </div>

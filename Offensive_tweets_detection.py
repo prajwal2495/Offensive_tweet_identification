@@ -30,6 +30,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import warnings
 
 import pprint
+
+## Creates a PrettyPrinter object. This will be used further to print messages in a cleaner way.
 pp = pprint.PrettyPrinter(indent=5)
 
 
@@ -37,22 +39,33 @@ pp = pprint.PrettyPrinter(indent=5)
 
 
 print("reading data set....")
+
+## Stores the training data set read from the CSV file.
 training_data_set = pd.read_csv("/Users/prajwalkrishn/Desktop/My_Computer/project - Dsci 601/Offensive_Tweet_Detection/Dataset/MOLID.csv")
 print("Done reading....")
 
 
+
+## Store the tweets, which is the first column of the dataframe. These are strings.
 tweets = training_data_set[["tweet"]]
+
+## Stores the Level A labels (Offensive/Not Offensive).
 level_A_labels = training_data_set[["subtask_a"]]
+
+## Stores the Level B labels (Targeted/Untargeted).
 level_B_labels = training_data_set.query("subtask_a == 'Offensive'")[["subtask_b"]]
+
+## Stores the Level C labels (Ind/Grp/Oth)
 level_C_labels = training_data_set.query("subtask_b == 'TIN'")[["subtask_c"]]
 
-'''
-All_cleaned_tweets contains the tweets from the dataset.
-'''
+##All_cleaned_tweets contains the tweets from the dataset.
 All_Cleaned_tweets = copy.deepcopy(tweets)
 
 
+##Stores an instance of LancasterStemmer class. This will be used for stemming tokens.
 lancaster = LancasterStemmer()
+
+## Stores an instance of WordNetLemmatizer class. This will be used for lemmatization of tokens.
 wordNet = WordNetLemmatizer()
 
 
@@ -171,15 +184,23 @@ def get_vectors(vectors, labels, keyword):
 	return result
 
 
+## Numerical Vectors for level A
+vectors_level_a = tfid(text_vector) 
 
-vectors_level_a = tfid(text_vector) # Numerical Vectors A
-labels_level_a = level_A_labels['subtask_a'].values.tolist() # Subtask A Labels
+ ## Subtask A Labels
+labels_level_a = level_A_labels['subtask_a'].values.tolist()
 
-vectors_level_b = get_vectors(vectors_level_a, labels_level_a, "Offensive") # Numerical Vectors B
-labels_level_b = level_B_labels['subtask_b'].values.tolist() # Subtask B Labels
+## Numerical Vectors B
+vectors_level_b = get_vectors(vectors_level_a, labels_level_a, "Offensive") 
 
-vectors_level_c = get_vectors(vectors_level_b, labels_level_b, "TIN") # Numerical Vectors C
-labels_level_c = level_C_labels['subtask_c'].values.tolist() # Subtask C Labels
+## Subtask B Labels
+labels_level_b = level_B_labels['subtask_b'].values.tolist() 
+
+## Numerical Vectors C
+vectors_level_c = get_vectors(vectors_level_b, labels_level_b, "TIN") 
+
+##Subtask C Labels
+labels_level_c = level_C_labels['subtask_c'].values.tolist() 
 
 
 
