@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['test_5flabels_5flevel_5fa_28',['test_labels_level_A',['../namespace_offensive__tweets__detection.html#a66a1b2046ca8fee36c26dddf9ef45fa8',1,'Offensive_tweets_detection']]],
+  ['test_5flabels_5flevel_5fb_29',['test_labels_level_B',['../namespace_offensive__tweets__detection.html#a338fa8d7ed5af5fdae392d5aad2b6379',1,'Offensive_tweets_detection']]],
+  ['test_5flabels_5flevel_5fc_30',['test_labels_level_C',['../namespace_offensive__tweets__detection.html#aa1a76ba9db3a4adecc93c200778724a3',1,'Offensive_tweets_detection']]],
+  ['test_5fpredictions_31',['test_predictions',['../namespace_offensive__tweets__detection.html#a52a8cb49dbd093fdfee8f8e6bfab01f8',1,'Offensive_tweets_detection']]],
+  ['test_5fvectors_5flevel_5fa_32',['test_vectors_level_A',['../namespace_offensive__tweets__detection.html#a3474972940d5fabffc94014788a9b292',1,'Offensive_tweets_detection']]],
+  ['test_5fvectors_5flevel_5fb_33',['test_vectors_level_B',['../namespace_offensive__tweets__detection.html#a7a174f6880edd02a8ec98d12193772b8',1,'Offensive_tweets_detection']]],
+  ['test_5fvectors_5flevel_5fc_34',['test_vectors_level_C',['../namespace_offensive__tweets__detection.html#aea6af55f9f92c49acd2c2293196e0a40',1,'Offensive_tweets_detection']]],
+  ['text_5fvector_35',['text_vector',['../namespace_offensive__tweets__detection.html#aadf38a1541501c33f2de8aab9d91e774',1,'Offensive_tweets_detection']]],
+  ['tfid_36',['tfid',['../namespace_offensive__tweets__detection.html#a3374a868ae7b515cf3e9114b17ab048c',1,'Offensive_tweets_detection']]],
+  ['tokenize_37',['tokenize',['../namespace_offensive__tweets__detection.html#a8c3e7ba3b8bef4a152090b548f8531bc',1,'Offensive_tweets_detection']]],
+  ['train_5flabels_5flevel_5fa_38',['train_labels_level_A',['../namespace_offensive__tweets__detection.html#a206bdb30ca926586dc02b99fc1f18a76',1,'Offensive_tweets_detection']]],
+  ['train_5flabels_5flevel_5fb_39',['train_labels_level_B',['../namespace_offensive__tweets__detection.html#a66f8bedee776ede727525231e1bea681',1,'Offensive_tweets_detection']]],
+  ['train_5flabels_5flevel_5fc_40',['train_labels_level_C',['../namespace_offensive__tweets__detection.html#a728e58ff398ee3bcd9a95ecc857dbe54',1,'Offensive_tweets_detection']]],
+  ['train_5fsize_41',['train_size',['../namespace_offensive__tweets__detection.html#aba2d948d96e8c22359b874110a5602cf',1,'Offensive_tweets_detection']]],
+  ['train_5fvectors_5flevel_5fa_42',['train_vectors_level_A',['../namespace_offensive__tweets__detection.html#a2a5f267e33a6bd3c9ea2ff06d9d3e63f',1,'Offensive_tweets_detection']]],
+  ['train_5fvectors_5flevel_5fb_43',['train_vectors_level_B',['../namespace_offensive__tweets__detection.html#adac94fc76ed9fe7b818634f8ba02ac1b',1,'Offensive_tweets_detection']]],
+  ['train_5fvectors_5flevel_5fc_44',['train_vectors_level_C',['../namespace_offensive__tweets__detection.html#ab4aa3338a85e13390b963ffc7eac9568',1,'Offensive_tweets_detection']]],
+  ['training_5fdata_5fset_45',['training_data_set',['../namespace_offensive__tweets__detection.html#a536f65fe3eb50909a7dbc3f275c2e34c',1,'Offensive_tweets_detection']]],
+  ['tweets_46',['tweets',['../namespace_offensive__tweets__detection.html#a9248ad693913086b9f370463f3b2c56c',1,'Offensive_tweets_detection']]]
+];

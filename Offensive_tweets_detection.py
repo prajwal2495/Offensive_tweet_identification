@@ -2,6 +2,15 @@ import pandas as pd
 import numpy as np
 import copy
 from tqdm import tqdm
+<<<<<<< HEAD
+import re
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import LancasterStemmer,WordNetLemmatizer
+=======
 import warnings
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -19,6 +28,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from sklearn.linear_model import LogisticRegression
 import warnings
 
+>>>>>>> 904fea45df4805697c257a71d4bc4592d28e4468
 import pprint
 pp = pprint.PrettyPrinter(indent=5)
 
@@ -38,18 +48,17 @@ level_C_labels = training_data_set.query("subtask_b == 'TIN'")[["subtask_c"]]
 
 All_Cleaned_tweets = copy.deepcopy(tweets)
 
-import re
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import LancasterStemmer,WordNetLemmatizer
+
 lancaster = LancasterStemmer()
 wordNet = WordNetLemmatizer()
 
 
+
 def remove_webTags_UserNames_Noise(tweet):
+	''' Removes the username tags which start with the special character "@" on Twitter.
+	# @param tweet String that contains the tweet.
+	# @return the tweet containing only alphabets, both lowercase and uppercase.
+	'''
     things_to_be_removed_from_tweets = ['URL','@USER','\'ve','n\'t','\'s','\'m']
     
     for things in things_to_be_removed_from_tweets:
