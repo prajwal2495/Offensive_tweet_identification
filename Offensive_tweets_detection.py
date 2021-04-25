@@ -2,6 +2,22 @@ import pandas as pd
 import numpy as np
 import copy
 from tqdm import tqdm
+import warnings
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC, LinearSVC
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report,plot_confusion_matrix
+from sklearn.model_selection import GridSearchCV
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC, LinearSVC
+from sklearn.naive_bayes import GaussianNB, MultinomialNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.linear_model import LogisticRegression
+import warnings
 
 import pprint
 pp = pprint.PrettyPrinter(indent=5)
@@ -123,26 +139,8 @@ labels_level_c = level_C_labels['subtask_c'].values.tolist() # Subtask C Labels
 
 
 
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC, LinearSVC
-from sklearn.naive_bayes import GaussianNB, MultinomialNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LogisticRegression
-import warnings
-
 
 print("SVM model experiment begins on Level A classification ...")
-import warnings
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC, LinearSVC
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report,plot_confusion_matrix
-from sklearn.model_selection import GridSearchCV
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 train_vectors_level_A, test_vectors_level_A, train_labels_level_A, test_labels_level_A = train_test_split(vectors_level_a[:], labels_level_a[:], train_size=0.70)
 
