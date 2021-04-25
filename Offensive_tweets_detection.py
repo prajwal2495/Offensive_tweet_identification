@@ -56,43 +56,41 @@ lancaster = LancasterStemmer()
 wordNet = WordNetLemmatizer()
 
 
-
 def remove_webTags_UserNames_Noise(tweet):
 	''' 
 	Removes the username tags which start with the special character "@" on Twitter.
 	# @param tweet String that contains the tweet.
 	# @return the tweet containing only alphabets, both lowercase and uppercase.
 	'''
-    things_to_be_removed_from_tweets = ['URL','@USER','\'ve','n\'t','\'s','\'m']
-    
-    for things in things_to_be_removed_from_tweets:
-        tweet = tweet.replace(things,'')
-    
-    return re.sub(r'[^a-zA-Z]', ' ', tweet)
+	things_to_be_removed_from_tweets = ['URL','@USER','\'ve','n\'t','\'s','\'m']
+	for things in things_to_be_removed_from_tweets:
+		tweet = tweet.replace(things,'')
+
+	return re.sub(r'[^a-zA-Z]', ' ', tweet)
 
 
 def stop_words_removal(tokens):
-    '''
-    Removes stop words from the tweets.
-    @param tokens
-    '''
-    cleaned_tokens = []
-    stop = set(stopwords.words('english'))
-    for token in tokens:
-        if token not in stop:
-            if token.replace(' ','') != '':
-                if len(token) > 1:
-                    cleaned_tokens.append(token)
-    return cleaned_tokens
+	'''
+	Removes stop words from the tweets.
+	@param tokens
+	'''
+	cleaned_tokens = []
+	stop = set(stopwords.words('english'))
+	for token in tokens:
+		if token not in stop:
+			if token.replace(' ','') != '':
+				if len(token) > 1:
+					cleaned_tokens.append(token)
+	return cleaned_tokens
 
 def tokenize(tweet):
-    '''
-    Tokenises a tweet into words.
-    @param tweet String containing the tweet to be tokenised.
-    @return word separated from the tweet.
-    '''
-    lower_cased_tweet = tweet.lower()
-    return word_tokenize(lower_cased_tweet)
+	'''
+	Tokenises a tweet into words.
+	@param tweet String containing the tweet to be tokenised.
+	@return word separated from the tweet.
+	'''
+	lower_cased_tweet = tweet.lower()
+	return word_tokenize(lower_cased_tweet)
 
 def stemming(tokens):
 	'''
@@ -100,12 +98,12 @@ def stemming(tokens):
 	@param tokens a list of tokens that are to be stemmed.
 	@return cleaned_tokens returns a list of stemmed tokens.
 	'''
-    cleaned_tokens = []
-    for token in tokens:
-        token = lancaster.stem(token)
-        if len(token) > 1:
-            cleaned_tokens.append(token)
-    return cleaned_tokens
+	cleaned_tokens = []
+	for token in tokens:
+		token = lancaster.stem(token)
+		if len(token) > 1:
+			cleaned_tokens.append(token)
+	return cleaned_tokens
 
 def lemmatization(tokens):
 	'''
@@ -113,12 +111,12 @@ def lemmatization(tokens):
 	@param tokens a list of tokens that are to be stemmed.
 	@return cleaned_tokens returns a list of stemmed tokens.
 	'''
-    cleaned_tokens = []
-    for token in tokens:
-        token = wordNet.lemmatize(token)
-        if len(token) > 1:
-            cleaned_tokens.append(token)
-    return cleaned_tokens
+	cleaned_tokens = []
+	for token in tokens:
+		token = wordNet.lemmatize(token)
+		if len(token) > 1:
+			cleaned_tokens.append(token)
+	return cleaned_tokens
 
 
 
@@ -149,11 +147,11 @@ def tfid(text_vector):
 	@param text_vector tweets to be converted into tf-idf feature form.
 	@return vectors returns the tweets converted into tf-idf features.
 	'''
-    vectorizer = TfidfVectorizer()
-    untokenized_data =[' '.join(tweet) for tweet in tqdm(text_vector, "Vectorizing...")]
-    vectorizer = vectorizer.fit(untokenized_data)
-    vectors = vectorizer.transform(untokenized_data).toarray()
-    return vectors
+	vectorizer = TfidfVectorizer()
+	untokenized_data =[' '.join(tweet) for tweet in tqdm(text_vector, "Vectorizing...")]
+	vectorizer = vectorizer.fit(untokenized_data)
+	vectors = vectorizer.transform(untokenized_data).toarray()
+	return vectors
   
 def get_vectors(vectors, labels, keyword):
 	'''
@@ -163,14 +161,14 @@ def get_vectors(vectors, labels, keyword):
 	@param labels These are the label values for the given label.
 	@param keyword which is the label to annotate for.
 	'''
-    if len(vectors) != len(labels):
-        print("Unmatching sizes!")
-        return
-    result = list()
-    for vector, label in zip(vectors, labels):
-        if label == keyword:
-            result.append(vector)
-    return result
+	if len(vectors) != len(labels):
+		print("Unmatching sizes!")
+		return
+	result = list()
+	for vector, label in zip(vectors, labels):
+		if label == keyword:
+			result.append(vector)
+	return result
 
 
 
