@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import copy
@@ -13,7 +7,7 @@ import pprint
 pp = pprint.PrettyPrinter(indent=5)
 
 
-# In[2]:
+
 
 
 print("reading data set....")
@@ -21,13 +15,13 @@ training_data_set = pd.read_csv("/Users/prajwalkrishn/Desktop/My_Computer/projec
 print("Done reading....")
 
 
-# In[3]:
+
 
 
 training_data_set.head(5)
 
 
-# In[4]:
+
 
 
 tweets = training_data_set[["tweet"]]
@@ -38,43 +32,20 @@ level_C_labels = training_data_set.query("subtask_b == 'TIN'")[["subtask_c"]]
 All_Cleaned_tweets = copy.deepcopy(tweets)
 
 
-# In[5]:
 
 
 ##Data Cleaning and Pre-Processing
 
+# tweets.head(5)
 
-# In[6]:
+# level_A_labels.head(5)
 
+# level_B_labels.head(5)
 
-tweets.head(5)
+# level_C_labels.head(5)
 
+# All_Cleaned_tweets.head(5)
 
-# In[7]:
-
-
-level_A_labels.head(5)
-
-
-# In[8]:
-
-
-level_B_labels.head(5)
-
-
-# In[9]:
-
-
-level_C_labels.head(5)
-
-
-# In[10]:
-
-
-All_Cleaned_tweets.head(5)
-
-
-# In[11]:
 
 
 import re
@@ -86,9 +57,6 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import LancasterStemmer,WordNetLemmatizer
 lancaster = LancasterStemmer()
 wordNet = WordNetLemmatizer()
-
-
-# In[14]:
 
 
 def remove_webTags_UserNames_Noise(tweet):
@@ -130,8 +98,6 @@ def lemmatization(tokens):
     return cleaned_tokens
 
 
-# In[15]:
-
 
 tqdm.pandas(desc = "clean...")
 All_Cleaned_tweets['tweet'] = tweets['tweet'].progress_apply(remove_webTags_UserNames_Noise)
@@ -151,13 +117,9 @@ All_Cleaned_tweets['tokens'] = All_Cleaned_tweets['tokens'].progress_apply(lemma
 text_vector = All_Cleaned_tweets['tokens'].tolist()
 
 
-# In[16]:
 
+# All_Cleaned_tweets.head(5)
 
-All_Cleaned_tweets.head(5)
-
-
-# In[17]:
 
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -180,8 +142,6 @@ def get_vectors(vectors, labels, keyword):
     return result
 
 
-# In[18]:
-
 
 vectors_level_a = tfid(text_vector) # Numerical Vectors A
 labels_level_a = level_A_labels['subtask_a'].values.tolist() # Subtask A Labels
@@ -192,20 +152,6 @@ labels_level_b = level_B_labels['subtask_b'].values.tolist() # Subtask B Labels
 vectors_level_c = get_vectors(vectors_level_b, labels_level_b, "TIN") # Numerical Vectors C
 labels_level_c = level_C_labels['subtask_c'].values.tolist() # Subtask C Labels
 
-
-# In[19]:
-
-
-pp.pprint(vectors_level_a)
-
-
-# In[20]:
-
-
-pp.pprint(labels_level_c)
-
-
-# In[21]:
 
 
 from sklearn.model_selection import train_test_split
@@ -244,8 +190,6 @@ print("Confusion Matrix:", )
 print(confusion_matrix(test_labels, test_predictions))
 print(classification_report(test_labels,test_predictions))
 
-
-# In[ ]:
 
 
 print("SVM model experiment begins ...")
@@ -290,8 +234,6 @@ plottedCM = plot_confusion_matrix(classifierGrid, test_vectors, test_labels,disp
 plt.show()
 
 
-# In[ ]:
-
 
 print("RandomForest model experiment begins ...")
 import warnings
@@ -332,9 +274,6 @@ print(confusion_matrix(test_labels, test_predictions))
 print(classification_report(test_labels,test_predictions))
 
 
-# In[ ]:
-
-
 print("MNB model experiment begins ...")
 import warnings
 from sklearn.model_selection import train_test_split
@@ -371,9 +310,6 @@ print("Test Accuracy:", accuracy)
 print("Confusion Matrix:", )
 print(confusion_matrix(test_labels, test_predictions))
 print(classification_report(test_labels,test_predictions))
-
-
-# In[ ]:
 
 
 print("KNN model experiment begins ...")
@@ -413,10 +349,3 @@ print("Test Accuracy:", accuracy)
 print("Confusion Matrix:", )
 print(confusion_matrix(test_labels, test_predictions))
 print(classification_report(test_labels,test_predictions))
-
-
-# In[ ]:
-
-
-
-
