@@ -34,7 +34,7 @@ SVC model has outperformed all the other models and the results are as follows f
 		Test Accuracy : 0.69387
 
 
-## Installation
+## Installation and Execution
 
 Your python envirmonment should be installed with proper libraries such as Scikit_learn, NLTK, TQDM, MatPlotLib. You can pip or brew commands depending on the machine you are using to download these libaries
 
