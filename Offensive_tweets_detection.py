@@ -46,6 +46,9 @@ level_A_labels = training_data_set[["subtask_a"]]
 level_B_labels = training_data_set.query("subtask_a == 'Offensive'")[["subtask_b"]]
 level_C_labels = training_data_set.query("subtask_b == 'TIN'")[["subtask_c"]]
 
+'''
+All_cleaned_tweets contains the tweets from the dataset.
+'''
 All_Cleaned_tweets = copy.deepcopy(tweets)
 
 
