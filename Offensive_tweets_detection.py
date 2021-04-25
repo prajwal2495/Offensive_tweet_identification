@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import copy
 from tqdm import tqdm
-<<<<<<< HEAD
+
 import re
 import nltk
 nltk.download('punkt')
@@ -10,7 +10,7 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import LancasterStemmer,WordNetLemmatizer
-=======
+
 import warnings
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -29,7 +29,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 import warnings
 
->>>>>>> 904fea45df4805697c257a71d4bc4592d28e4468
 import pprint
 pp = pprint.PrettyPrinter(indent=5)
 
@@ -56,11 +55,18 @@ wordNet = WordNetLemmatizer()
 
 
 def remove_webTags_UserNames_Noise(tweet):
+<<<<<<< HEAD
 	''' 
 	Removes the username tags which start with the special character "@" on Twitter.
 	# @param tweet String that contains the tweet.
 	# @return the tweet containing only alphabets, both lowercase and uppercase.
 	'''
+=======
+    ''' Removes the username tags which start with the special character "@" on Twitter.
+    # @param tweet String that contains the tweet.
+    # @return the tweet containing only alphabets, both lowercase and uppercase.
+    '''
+>>>>>>> 7b0b9e5a7af709f5a9d2be29b06578ccd00173d9
     things_to_be_removed_from_tweets = ['URL','@USER','\'ve','n\'t','\'s','\'m']
     
     for things in things_to_be_removed_from_tweets:
@@ -70,10 +76,10 @@ def remove_webTags_UserNames_Noise(tweet):
 
 
 def stop_words_removal(tokens):
-	'''
-	Removes stop words from the tweets. 
-	@param tokens 
-	'''
+    '''
+    Removes stop words from the tweets.
+    @param tokens
+    '''
     cleaned_tokens = []
     stop = set(stopwords.words('english'))
     for token in tokens:
@@ -84,11 +90,11 @@ def stop_words_removal(tokens):
     return cleaned_tokens
 
 def tokenize(tweet):
-	'''
-	Tokenises a tweet into words.
-	@param tweet String containing the tweet to be tokenised.
-	@return word separated from the tweet.
-	'''
+    '''
+    Tokenises a tweet into words.
+    @param tweet String containing the tweet to be tokenised.
+    @return word separated from the tweet.
+    '''
     lower_cased_tweet = tweet.lower()
     return word_tokenize(lower_cased_tweet)
 
