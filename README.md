@@ -42,6 +42,5 @@ Your python envirmonment should be installed with proper libraries such as Sciki
 	cd Offensive_tweet_identification
 	python Offensive_tweets_detection.py
 
-
-
-
+Note:
+Every train on the levels of classification results in a confusion matrix being displayed on the screen, close the confusion matrix to continue with the execution.
