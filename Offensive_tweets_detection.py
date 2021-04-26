@@ -31,12 +31,6 @@ import warnings
 
 import pprint
 
-## Creates a PrettyPrinter object. This will be used further to print messages in a cleaner way.
-pp = pprint.PrettyPrinter(indent=5)
-
-
-
-
 
 print("reading data set....")
 #/Users/prajwalkrishn/Desktop/My_Computer/project - Dsci 601/Offensive_Tweet_Detection
